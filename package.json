@@ -1,0 +1,25 @@
+{
+  "name": "youtube-channel-pub",
+  "version": "1.0.0",
+  "description": "demasiado jamones",
+  "main": "index.js",
+  "dependencies": {
+    "async": "^3.1.0",
+    "mongodb": "^3.2.7",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shane-Neeley/youtube-channel-pub.git"
+  },
+  "author": "Shane Neeley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shane-Neeley/youtube-channel-pub/issues"
+  },
+  "homepage": "https://github.com/Shane-Neeley/youtube-channel-pub#readme"
+}
