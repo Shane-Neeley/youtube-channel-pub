@@ -1,0 +1,17 @@
+classnumber
+day_of_year
+lat
+lon
+precipProbability
+precipProbabilityPreviousDay
+precipProbabilityPreviousDay2
+precipProbabilityPreviousDay7
+pressure
+temperatureMax
+temperatureMaxPrevDay1
+temperatureMaxPrevDay2
+temperatureMaxPrevDay7
+temperatureMin
+temperatureMinPrevDay1
+temperatureMinPrevDay2
+temperatureMinPrevDay7
