@@ -1,3 +1,21 @@
+## Morchella (Genus of morel mushroom) & More! Occurrence Prediction App
+
+Predict whether today is the day to go mushroom hunting! (in a more complex way than just picking up a guide, or asking an old Russian lady / Mexican uncle).
+
+Gather historical weather data of mushroom sightings posted to iNaturalist.
+
+Integrates w/ DarkSky weather API and iNaturalist API.
+
+Get data points like geolocation, date-time, vegetative index, temperature, barometric pressure, past precipitation, precipitation probabilities.
+
+Feed data into machine learning models. Neural networks (regular and convolutional), decision trees, k nearest neighbors algorithms. Choose the best performing model to train.
+
+Run TODAY'S data (weather, geo, etc.) through the trained model to predict your chances of seeing which mushroom species!
+
+Current observation genus: Morchella, Laetiporus, Cantharellus, Helvella (false morel), Verpa (false morel), Gyromitra, (false morel), Boletus, Pleurotus, Agaricus, Gyroporus, Leccinum.
+
+## Setup and Run
+
 #### Create files at project level:
 
 - secret_key1.txt -- just one line w/ WEATHER_KEY from https://darksky.net/dev (credit card required, but won't cost you much.)
