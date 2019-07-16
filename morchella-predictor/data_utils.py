@@ -13,11 +13,11 @@ from datetime import datetime as dt
 from datetime import timedelta
 from dateutil import parser as dateparse
 
-# with open('secret_key1.txt', 'r') as myfile:
-#     AGRO_KEY = myfile.read().replace('\n', '')
-
-with open('secret_key2.txt', 'r') as myfile:
+with open('secret_key1.txt', 'r') as myfile:
     WEATHER_KEY = myfile.read().replace('\n', '')
+
+# with open('secret_key2.txt', 'r') as myfile:
+#     AGRO_KEY = myfile.read().replace('\n', '')
 
 ############################################################################
 
