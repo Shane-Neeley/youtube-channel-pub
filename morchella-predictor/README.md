@@ -125,3 +125,10 @@ Predictions! July 17th, 2019.
 Configs!
 ![](images/configs.png)
 ---
+Observations
+![](images/o1.png)
+---
+![](images/o2.png)
+---
+![](images/o3.png)
+---
