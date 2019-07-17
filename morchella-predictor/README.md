@@ -1,6 +1,6 @@
 ## Morchella (Genus of morel mushroom) & More! Occurrence Prediction App
 
-Predict whether today is the day to go mushroom hunting! (in a more complex way than just picking up a guide).
+Predict whether today is the day to go mushroom hunting! (in a more complex way than just picking up a guide). Feed your family! Fresh food, probiotics! Be healthy and local. 
 
 Gather historical weather data of mushroom sightings posted to iNaturalist.
 
@@ -49,10 +49,6 @@ ANN model
 
 `python predict.py --model ann`
 
-CNN model
-
-`python predict.py --model cnn`
-
 Decision tree model
 
 `python predict.py --model decisiontree`
@@ -88,8 +84,22 @@ temperatureMinPrevDay2
 temperatureMinPrevDay7
 
 #### Screenshots
-
+---
 ![](images/training_ann1.png)
+
+Class imbalance eh?
+
+1 - Morchella
+2 - Laetiporus
+3 - Cantharellus
+4 - Helvella
+5 - Verpa
+6 - Gyromitra
+7 - Boletus
+8 - Pleurotus
+9 - Agaricus
+10 - Gyroporus
+11 - Leccinum
 
 ---
 ![](images/training_ann2.png)
@@ -104,3 +114,14 @@ ANN (needs improvement)
 ---
 Decision Tree (much better!)
 ![](images/confusion_matrix_decisiontree.png)
+
+---
+Predictions! July 17th, 2019.
+
+![](images/predict_ann.png)
+---
+![](images/predict_dt.png)
+---
+Configs!
+![](images/configs.png)
+---
