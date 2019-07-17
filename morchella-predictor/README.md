@@ -1,6 +1,6 @@
 ## Morchella (Genus of morel mushroom) & More! Occurrence Prediction App
 
-Predict whether today is the day to go mushroom hunting! (in a more complex way than just picking up a guide). Feed your family! Fresh food, probiotics! Be healthy and local. 
+Predict whether today is the day to go mushroom hunting! (in a more complex way than just picking up a guide). Feed your family! Fresh food, probiotics! Be healthy and local.
 
 Gather historical weather data of mushroom sightings posted to iNaturalist.
 
@@ -61,27 +61,27 @@ K-nearest neighbors model
 
 Batter and Fry.
 
-#### Data Acquired
+#### Data for Training
 
 Headers from data/headers.txt
 
-classnumber - *class number of genus*
-day_of_year - *day of year 1-365*
-lat - *latitude*
-lon - *longitude*
-precipProbability - *precipitation probability on the day of observation*
-precipProbabilityPreviousDay - *precipitation probability on the previous days*
-precipProbabilityPreviousDay2
-precipProbabilityPreviousDay7
-pressure - *barometric pressure*
-temperatureMax - *high temp on day of observation*
-temperatureMaxPrevDay1 - *high temp on day before observation*
-temperatureMaxPrevDay2 - *high temp on two days before observation*
-temperatureMaxPrevDay7
-temperatureMin - *low temp on day of observation*
-temperatureMinPrevDay1 - *low temp on day before observation*
-temperatureMinPrevDay2
-temperatureMinPrevDay7
+- classnumber - *class number of genus*
+- day_of_year - *day of year 1-365*
+- lat - *latitude*
+- lon - *longitude*
+- precipProbability - *precipitation probability on the day of observation*
+- precipProbabilityPreviousDay - *precipitation probability on the previous days*
+- precipProbabilityPreviousDay2
+- precipProbabilityPreviousDay7
+- pressure - *barometric pressure*
+- temperatureMax - *high temp on day of observation*
+- temperatureMaxPrevDay1 - *high temp on day before observation*
+- temperatureMaxPrevDay2 - *high temp on two days before observation*
+- temperatureMaxPrevDay7
+- temperatureMin - *low temp on day of observation*
+- temperatureMinPrevDay1 - *low temp on day before observation*
+- temperatureMinPrevDay2
+- temperatureMinPrevDay7
 
 #### Screenshots
 ---
