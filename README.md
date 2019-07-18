@@ -1,6 +1,6 @@
 # Code Examples and Tips
 
-From: [youtube.com/shaneneeley](http://www.youtube.com/shaneneeley)
+From: [youtube.com/shaneneeley](https://www.youtube.com/playlist?list=PL_87BC5L39GGg6HTaEvI66i62hK96KEIA)
 
 #### Current Projects
 
