@@ -1,6 +1,6 @@
 # Code Examples and Tips
 
-From: [youtube.com/shaneneeley](youtube.com/shaneneeley)
+From: [youtube.com/shaneneeley](http://www.youtube.com/shaneneeley)
 
 #### Current Projects
 
