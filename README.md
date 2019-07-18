@@ -1,4 +1,11 @@
-# youtube-channel-pub
-Public Stuff for YouTube
+# Code Examples and Tips
 
-WHAAAAAAT
+From: [youtube.com/shaneneeley](youtube.com/shaneneeley)
+
+#### Current Projects
+
+- [Setting Up Your Mac The Fun Way](setting-up-new-mac/notes.md)
+
+- [Morel Mushroom Predictor / Fung-AI](morchella-predictor/README.md)
+
+- [Danger Predictor / Watch Out AI](danger-predictor)
