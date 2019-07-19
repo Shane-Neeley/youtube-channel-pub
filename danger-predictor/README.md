@@ -110,3 +110,5 @@ Dangerously bad guessing model
 OMG it thinks everything is a rattlesnake!
 ![](images/confusion_matrix_ann.png)
 ---
+Ohh noooo! Rattle snakes all week in my area!
+![](images/watchout.png)
