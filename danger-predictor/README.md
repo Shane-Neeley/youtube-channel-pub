@@ -1,6 +1,6 @@
-## Morchella (Genus of morel mushroom) & More! Occurrence Prediction App
+## Danger Predictor -- will a bear, cougar, gilamonster or rattlesnake bite you today?
 
-Predict whether today is the day to run away from danger! Probiotics! Be healthy and local.
+Predict whether today is the day to run away from danger!
 
 Gather historical weather data of dangerous sightings posted to iNaturalist.
 
