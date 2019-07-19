@@ -1,6 +1,6 @@
 ## Morchella (Genus of morel mushroom) & More! Occurrence Prediction App
 
-Predict whether today is the day to run away from danger!robiotics! Be healthy and local.
+Predict whether today is the day to run away from danger! Probiotics! Be healthy and local.
 
 Gather historical weather data of dangerous sightings posted to iNaturalist.
 
