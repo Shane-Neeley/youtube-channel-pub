@@ -8,7 +8,7 @@ Integrates w/ DarkSky weather API and iNaturalist API.
 
 Get data points like geolocation, date-time, vegetative index, temperature, barometric pressure, past precipitation, precipitation probabilities.
 
-Feed data into machine learning models. Neural networks (regular and convolutional), decision trees, k nearest neighbors algorithms. Choose the best performing model to train.
+Feed data into machine learning models. Neural networks, decision trees, k nearest neighbors algorithms. Choose the best performing model to train.
 
 Run TODAY'S data (weather, geo, etc.) through the trained model to predict your chances of seeing which mushroom species!
 
@@ -17,6 +17,12 @@ Current observation genus: Morchella, Laetiporus, Cantharellus, Helvella (false 
 Why pick up a guide (or ask an older Russian woman), when you can predict the hunting season with ML.
 
 ## Setup and Run
+
+#### Dependencies (auto-generated w/ `pipreqs .`)
+
+These packages would have been installed if you followed the [setting up your Mac tutorial](). Otherwise, install them based on the `requirements.txt`
+
+See: [how-to-install-dependencies-from-a-requirements-txt-file-with-conda](https://www.technologyscout.net/2017/11/how-to-install-dependencies-from-a-requirements-txt-file-with-conda/)
 
 #### Create files at project level:
 

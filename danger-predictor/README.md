@@ -8,11 +8,17 @@ Integrates w/ DarkSky weather API and iNaturalist API.
 
 Get data points like geolocation, date-time, vegetative index, temperature, barometric pressure, past precipitation, precipitation probabilities.
 
-Feed data into machine learning models. Neural networks (regular and convolutional), decision trees, k nearest neighbors algorithms. Choose the best performing model to train.
+Feed data into machine learning models. Neural networks, decision trees, k nearest neighbors algorithms. Choose the best performing model to train.
 
 Run TODAY'S data (weather, geo, etc.) through the trained model to predict your changes of seeing a dangerous animal near you today.
 
 ## Setup and Run
+
+#### Dependencies (auto-generated w/ `pipreqs .`)
+
+These packages would have been installed if you followed the [setting up your Mac tutorial](). Otherwise, install them based on the `requirements.txt`
+
+See: [how-to-install-dependencies-from-a-requirements-txt-file-with-conda](https://www.technologyscout.net/2017/11/how-to-install-dependencies-from-a-requirements-txt-file-with-conda/)
 
 #### Create files at project level:
 
@@ -52,6 +58,8 @@ Decision tree model
 K-nearest neighbors model
 
 `python predict.py --model kneighbors`
+
+Note: CNN model not implemented .. what would I convolve over?
 
 #### Evasion Tactics
 
@@ -112,3 +120,29 @@ OMG it thinks everything is a rattlesnake!
 ---
 Ohh noooo! Rattle snakes all week in my area!
 ![](images/watchout.png)
+
+#### What's happening under the hood?
+
+With --imports, it will activate the data_utils APIdata class.
+
+Under this class is the iNaturalist API requests. This loops through the genuses and acquires the results, filling up an observations array. These observations are converted into datapoints objects.
+
+The next thing that happens is the WeatherAPI. It takes all these datapoints and parses them into the DarkSky weather forecast API. It subtracts some days from the observation's timepoints to get data for the previous days as well.
+
+With all of this data collected, dataframes are made and saved to csv files in the data folder.
+
+If you're calling a prediction for today's data, the data passed into the the weather API is not from an iNaturalist animal observation. It is a specified geo-point of where you are, and today's date. Then it is passed into a pre-trained model to output the class probabilities for what animal may be attacking you today.
+
+If you are training with the main.py file. The collected observations are passed into the chosen model for training. For the neural network model, the parameters are specified in the config.json file like this:
+
+```
+"ann": {
+	"embedding_size": 128,
+	"hidden_layers": 6,
+	"dropout_p": 0.2,
+	"optimizer": "adam",
+	"loss": "categorical_crossentropy"
+}
+```
+
+The model is built using sequential Keras layers. More optimization on this model is needed. I have hardly done any tuning yet. The test function in the model itself plots logs and confusion matrices, calculates the AUC and saves training figures. It also saves a log of what exactly the model got incorrect on testing. All of this will help with hyperparameter tuning and model selection.

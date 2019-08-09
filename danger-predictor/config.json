@@ -55,34 +55,5 @@
     "optimizer": "adam",
     "learning_rate": 1E-4,
     "loss": "categorical_crossentropy"
-  },
-  "bayes": {
-    "embedding_size": 128,
-    "conv_layers": [
-      [
-        256,
-        10
-      ],
-      [
-        256,
-        7
-      ],
-      [
-        256,
-        5
-      ],
-      [
-        256,
-        3
-      ]
-    ],
-    "fully_connected_layers": [
-      1024,
-      1024
-    ],
-    "threshold": 1e-6,
-    "dropout_p": 0.1,
-    "optimizer": "adam",
-    "loss": "categorical_crossentropy"
   }
 }
