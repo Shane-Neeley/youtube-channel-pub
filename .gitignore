@@ -1,5 +1,8 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
+*/secret_key1.txt
+*/secret_key2.txt
+
 # compiled output
 /dist
 /tmp
