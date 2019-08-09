@@ -16,7 +16,7 @@ Run TODAY'S data (weather, geo, etc.) through the trained model to predict your 
 
 #### Dependencies (auto-generated w/ `pipreqs .`)
 
-These packages would have been installed if you followed the [setting up your Mac tutorial](). Otherwise, install them based on the `requirements.txt`
+These packages would have been installed if you followed the [setting up your Mac tutorial](../setting-up-new-mac/). Otherwise, install them based on the `requirements.txt`
 
 See: [how-to-install-dependencies-from-a-requirements-txt-file-with-conda](https://www.technologyscout.net/2017/11/how-to-install-dependencies-from-a-requirements-txt-file-with-conda/)
 
@@ -120,6 +120,8 @@ OMG it thinks everything is a rattlesnake!
 ---
 Ohh noooo! Rattle snakes all week in my area!
 ![](images/watchout.png)
+---
+
 
 #### What's happening under the hood?
 
