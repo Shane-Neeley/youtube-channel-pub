@@ -1,4 +1,4 @@
-	classnumber	day_of_year	genus	lat	lon	name	precipProbability	precipProbabilityPreviousDay	pressure	temperatureMax	temperatureMaxPrevDay1	temperatureMin	temperatureMinPrevDay1	time_observed_at
+classnumber	day_of_year	genus	lat	lon	name	precipProbability	precipProbabilityPreviousDay	pressure	temperatureMax	temperatureMaxPrevDay1	temperatureMin	temperatureMinPrevDay1	time_observed_at
 30720567	1	224	Ursus	45.5616045887	-64.9999924377	Ursus americanus	0.5	0.44	1009.12	72.09	64.83	58.2	55.94	2019-08-12 22:00:00
 30655162	1	223	Ursus	41.1527404785	-77.4450912476	Ursus americanus	0.0	0.0	1017.03	80.64	78.29	54.26	56.65	2019-08-11 23:24:13
 30637931	1	223	Ursus	47.7287258702	-83.358518891	Ursus americanus	0.21	0.14	1014.1	77.41	71.57	51.35	48.99	2019-08-11 20:15:59

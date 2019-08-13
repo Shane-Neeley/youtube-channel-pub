@@ -85,7 +85,7 @@ class APIdata(object):
         # The more genuses will help it learn about danger in general .. and help classify the one genus I want?
         self.genuses = [
             "Ursus",
-            "Panthera",
+            "Puma",
             "Heloderma",
             "Crotalus"
         ]
@@ -102,7 +102,8 @@ class APIdata(object):
         Load observations from iNaturalist
         60/min rate-limit
         """
-        print('getting observations ...')
+        MAX_OBSERVATIONS = 1000
+        print('MAX_OBSERVATIONS: ' + str(MAX_OBSERVATIONS))
         datapoints = {}
         # collect all datapoints and return it
         for genus in self.genuses:
@@ -122,10 +123,9 @@ class APIdata(object):
                     while not finished:
                         obs_url = ''.join([
                             'http://api.inaturalist.org/v1/observations?',
-                            'rank=genus',
                             '&taxon_id=' + str(taxon_id),
                             '&page=' + str(page),
-                            # '&quality_grade=research',
+                            '&quality_grade=research',
                             '&per_page=30&order=desc&order_by=observed_on'
                         ])
                         with requests.Session() as s2:
@@ -140,7 +140,7 @@ class APIdata(object):
                                 observations = observations + content2['results']
                                 page += 1
                                 skip += 30
-                                if skip >= content2['total_results']:
+                                if skip >= content2['total_results'] or skip >= MAX_OBSERVATIONS:
                                     finished = True
 
                                 # small amount for testing
@@ -188,7 +188,7 @@ class APIdata(object):
         """
         print('getting darksky ...')
         print('total observations:', len(datapoints))
-        print('will cost $', (len(datapoints) / 10000) * 4, 'dollars')
+        print('will cost $', (len(datapoints) / 10000) * 2, 'dollars')
         count = 0
         for id in datapoints:
             # for testing small amounts, break soon
@@ -216,8 +216,9 @@ class APIdata(object):
             print('danger at', loc[1], loc[2])
             weather = forecast(*loc, time=t)
             w_previous = forecast(*loc, time=date_o_minus1.isoformat())
-            w_previous2 = forecast(*loc, time=date_o_minus2.isoformat())
-            w_previous7 = forecast(*loc, time=date_o_minus7.isoformat())
+            # uncomment these to go farther back in time
+            # w_previous2 = forecast(*loc, time=date_o_minus2.isoformat())
+            # w_previous7 = forecast(*loc, time=date_o_minus7.isoformat())
 
             # darksky example saved in data folder (has other points like uvIndex, dewPoint, etc.)
             if (hasattr(weather, 'daily') and len(weather.daily) > 0):
@@ -250,25 +251,26 @@ class APIdata(object):
                             else:
                                 datapoints[id]['precipProbabilityPreviousDay'] = 0.0
 
-                    if (hasattr(w_previous2, 'daily') and len(w_previous2.daily) > 0):
-                        d2 = w_previous2.daily[0]
-                        if hasattr(d2, 'temperatureMax') and hasattr(d2, 'temperatureMin'):
-                            datapoints[id]['temperatureMaxPrevDay2'] = d2.temperatureMax
-                            datapoints[id]['temperatureMinPrevDay2'] = d2.temperatureMin
-                            if hasattr(d2, 'precipProbability'):
-                                datapoints[id]['precipProbabilityPreviousDay2'] = d2.precipProbability
-                            else:
-                                datapoints[id]['precipProbabilityPreviousDay2'] = 0.0
-
-                    if (hasattr(w_previous7, 'daily') and len(w_previous7.daily) > 0):
-                        d7 = w_previous7.daily[0]
-                        if hasattr(d7, 'temperatureMax') and hasattr(d7, 'temperatureMin'):
-                            datapoints[id]['temperatureMaxPrevDay7'] = d7.temperatureMax
-                            datapoints[id]['temperatureMinPrevDay7'] = d7.temperatureMin
-                            if hasattr(d7, 'precipProbability'):
-                                datapoints[id]['precipProbabilityPreviousDay7'] = d7.precipProbability
-                            else:
-                                datapoints[id]['precipProbabilityPreviousDay7'] = 0.0
+                    # uncomment these to go farther back in time
+                    # if (hasattr(w_previous2, 'daily') and len(w_previous2.daily) > 0):
+                    #     d2 = w_previous2.daily[0]
+                    #     if hasattr(d2, 'temperatureMax') and hasattr(d2, 'temperatureMin'):
+                    #         datapoints[id]['temperatureMaxPrevDay2'] = d2.temperatureMax
+                    #         datapoints[id]['temperatureMinPrevDay2'] = d2.temperatureMin
+                    #         if hasattr(d2, 'precipProbability'):
+                    #             datapoints[id]['precipProbabilityPreviousDay2'] = d2.precipProbability
+                    #         else:
+                    #             datapoints[id]['precipProbabilityPreviousDay2'] = 0.0
+                    #
+                    # if (hasattr(w_previous7, 'daily') and len(w_previous7.daily) > 0):
+                    #     d7 = w_previous7.daily[0]
+                    #     if hasattr(d7, 'temperatureMax') and hasattr(d7, 'temperatureMin'):
+                    #         datapoints[id]['temperatureMaxPrevDay7'] = d7.temperatureMax
+                    #         datapoints[id]['temperatureMinPrevDay7'] = d7.temperatureMin
+                    #         if hasattr(d7, 'precipProbability'):
+                    #             datapoints[id]['precipProbabilityPreviousDay7'] = d7.precipProbability
+                    #         else:
+                    #             datapoints[id]['precipProbabilityPreviousDay7'] = 0.0
 
         # print(json.dumps(datapoints))
 
@@ -291,7 +293,6 @@ class APIdata(object):
             df2.insert(0, 'classnumber', classnumber)
 
             print('headers: ', list(df2))
-            # TODO: save headers, save numclasses
             data = df2.as_matrix()
             tsv = shuffle(data)
             TRAINING_SPLIT = 0.80

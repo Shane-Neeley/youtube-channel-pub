@@ -50,10 +50,8 @@ class ANN(object):
         # hidden layers
         for layernumber in range(self.hidden_layers):
             model.add(Dense(units=self.hidden_units, activation=self.activation))
-        model.add(Dropout(self.dropout_p))
-        # output layer - ??
-        # model.add(Dense(units=self.hidden_units, activation=self.activation))
-        # model.add(Activation('softmax'))
+        # model.add(Dropout(self.dropout_p))
+        # output layer
         model.add(Dense(self.num_of_classes, activation='softmax'))
 
         # Compile model
